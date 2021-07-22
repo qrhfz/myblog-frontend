@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <PostItem/>
-    <PostItem/>
+    <PostItem v-for="post in posts" :key="post" :post="post"/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import PostItem from '@/components/PostItem.vue'
+import axios from 'axios'
+import Post from '@/types/Post';
 // @ is an alias to /src
 
 export default defineComponent({
@@ -15,5 +16,16 @@ export default defineComponent({
   components: {
     PostItem
   },
+  setup(){
+    const posts = ref<Post[]>([])
+    onMounted(()=>{
+      axios.get('http://localhost:3000/post').then((res)=>{
+        posts.value = res.data
+      }).catch(e=>{
+        console.log(e)
+      })
+    })
+    return {posts}
+  }
 });
 </script>
