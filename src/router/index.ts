@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import FullPost from '../views/FullPost.vue'
+import Tag from '../views/Tag.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,6 +21,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/post/:id',
     name: 'Full Post',
     component: FullPost
+  },{
+    path:'/tag/:id',
+    name: 'Tag',
+    component: Tag
   }
 
 ]

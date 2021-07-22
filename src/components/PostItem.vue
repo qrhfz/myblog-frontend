@@ -1,7 +1,7 @@
 <template>
   <div class="mb-3">
     <h2 class="tittle is-size-4">{{post.title}}</h2>
-    <span class="subtitle is-size-6 has-text-grey">18 November 1998</span>
+    <span class="subtitle is-size-6 has-text-grey">{{post.date}}</span>
     <p>
       {{post.body}}
     </p>

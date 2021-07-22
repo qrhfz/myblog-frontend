@@ -1,7 +1,18 @@
 <template>
   <div id="full-post">
     <div v-if="post">
-      {{post.body}}
+      <section class="hero is-success">
+        <div class="hero-body">
+          <div>
+            <div class="title">{{post.title}}</div>
+      <div class="subtitle">{{post.date}}</div>
+          </div>
+        </div>
+      </section>
+      <div class="py-5">
+        {{post.body}}
+      </div>
+      
     </div>
   </div>
 </template>
@@ -16,13 +27,13 @@ export default defineComponent({
   
   setup() {
     const route = useRoute()
-    const post = ref<Post>();
+    const post = ref<Post>()
     onMounted(() => {
       const id = route.params.id
       axios
-        .get("http://localhost:3000/post/" + id)
+        .get(process.env.VUE_APP_API_ROOT+'/post/' + id)
         .then((res) => (post.value = res.data))
-        .catch((e) => console.log(e));
+        .catch((e) => console.log(e))
     });
     return { post };
   },
