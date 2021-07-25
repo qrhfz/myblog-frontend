@@ -9,7 +9,7 @@
           </div>
         </div>
       </section>
-      <div class="py-5">
+      <div class="py-5 post-body">
         {{ post.body }}
       </div>
     </div>
@@ -49,4 +49,7 @@ export default defineComponent({
 
 
 <style>
+.post-body{
+  white-space: pre;
+}
 </style>
