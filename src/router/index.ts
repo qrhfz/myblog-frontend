@@ -1,7 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import FullPost from '../views/FullPost.vue'
+import Page from '../views/Page.vue'
 import Tag from '../views/Tag.vue'
+import PostEditor from '../views/PostEditor.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,17 +23,27 @@ const routes: Array<RouteRecordRaw> = [
     path: '/post/:id',
     name: 'Full Post',
     component: FullPost
-  },{
+  },
+  {
+    path: '/page/:id',
+    name: 'Page',
+    component: Page
+  },
+  {
     path:'/tag/:id',
     name: 'Tag',
     component: Tag
+  },
+  {
+    path:'/post-editor/',
+    name: 'Post Editor',
+    component: PostEditor
   }
 
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  linkActiveClass:'has-text-weight-bold',
   routes
 })
 

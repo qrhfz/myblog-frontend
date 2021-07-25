@@ -20,7 +20,7 @@ export default defineComponent({
   setup(){
     const posts = ref<Post[]>([])
     onMounted(()=>{
-      axios.get(process.env.VUE_APP_API_ROOT+'/post').then((res)=>{
+      axios.get(process.env.VUE_APP_API_ROOT+'/posts').then((res)=>{
         posts.value = res.data
       }).catch(e=>{
         console.log(e)

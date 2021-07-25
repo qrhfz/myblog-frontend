@@ -1,8 +1,8 @@
 import Post from './Post'
 
 type Tag = {
-    id:number
     name:string
+    slug:string
     posts:Post[]
 }
 
