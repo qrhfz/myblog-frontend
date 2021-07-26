@@ -13,8 +13,13 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
-    path:'/admin/post-editor/',
-    name: 'Post Editor Create',
+    path: '/admin/post-editor',
+    name: 'New Post',
+    component: PostEditor
+  },
+  {
+    path: '/admin/post-editor/:id',
+    name: 'Edit Post',
     component: PostEditor
   },
   {
@@ -22,11 +27,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Post Editor Create',
     component: TagManager
   },
-  {
-    path: '/admin/post-editor/:id',
-    name: 'Post Editor Update',
-    component: PostEditor
-  },
+  
   {
     path: '/post/:id',
     name: 'Full Post',

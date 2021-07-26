@@ -25,7 +25,7 @@ export default defineComponent({
   },
   setup(props) {
     const formattedDate = computed(() => {
-      if (props.post) {
+      if (props.post.date) {
         return formatDate(props.post.date)
       }
       return "no date";

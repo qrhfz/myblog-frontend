@@ -58,7 +58,7 @@ export default defineComponent({
     });
 
     const formattedDate = computed(() => {
-      if (post.value) {
+      if (post.value && post.value.date) {
         return formatDate(post.value.date);
       }
       return "no date";

@@ -1,11 +1,11 @@
 import Tag from "./Tag"
 
 type Post = {
-  id: number|undefined;
+  id?: number;
   title: string;
   body: string;
-  date: string;
-  tags: Tag[]|undefined
+  date?: string;
+  tags?: Tag[]
 }
 
 export default Post
