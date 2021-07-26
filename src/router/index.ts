@@ -4,6 +4,7 @@ import FullPost from '../views/FullPost.vue'
 import Page from '../views/Page.vue'
 import Tag from '../views/Tag.vue'
 import PostEditor from '../views/PostEditor.vue'
+import TagManager from '../views/TagManager.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,6 +21,21 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path:'/post/new',
+    name: 'Post Editor Create',
+    component: PostEditor
+  },
+  {
+    path:'/tag/manage',
+    name: 'Post Editor Create',
+    component: TagManager
+  },
+  {
+    path: '/post/:id/edit',
+    name: 'Post Editor Update',
+    component: PostEditor
+  },
+  {
     path: '/post/:id',
     name: 'Full Post',
     component: FullPost
@@ -34,11 +50,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Tag',
     component: Tag
   },
-  {
-    path:'/post-editor/',
-    name: 'Post Editor',
-    component: PostEditor
-  }
+  
 
 ]
 

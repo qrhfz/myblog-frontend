@@ -12,17 +12,14 @@
         <PageNav />
       </div>
     </nav>
-    <div class="columns">
-      <div class="column is-9">
-        <router-view :key="$route.fullPath" />
-      </div>
-      <div class="column is-3">
-        <TagMenu />
-      </div>
-    </div>
+
+    <router-view :key="$route.fullPath" />
   </div>
-  <footer class="has-text-centered has-background-grey-lighter"><div class="is-v-centered">
-    made by <b>Qori El-Hafizh</b> with VueJS and Bulma</div></footer>
+  <footer class="has-text-centered has-background-grey-lighter">
+    <div class="is-v-centered">
+      made by <b>Qori El-Hafizh</b> with VueJS and Bulma
+    </div>
+  </footer>
 </template>
 
 <style>
@@ -30,11 +27,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TagMenu from "@/components/TagMenu.vue";
+// import TagMenu from "@/components/TagMenu.vue";
 import PageNav from "@/components/PageNav.vue";
 export default defineComponent({
   components: {
-    TagMenu,
     PageNav,
   },
 });

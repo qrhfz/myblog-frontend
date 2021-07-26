@@ -3,7 +3,7 @@
     <h2 class="tittle is-size-4">{{post.title}}</h2>
     <span class="subtitle is-size-6 has-text-grey">{{formattedDate}}</span>
     <p>
-      {{post.body}}
+      {{slicedBody}}
     </p>
     <p>
       <router-link :to="{ path: '/post/'+ post.id}">Read more</router-link>
@@ -30,7 +30,10 @@ export default defineComponent({
       }
       return "no date";
     });
-    return {formattedDate}
+    const slicedBody = computed(()=>{
+      return props.post.body.substring(0,140);
+    })
+    return {formattedDate, slicedBody}
   },
 });
 </script>

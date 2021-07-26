@@ -2,16 +2,13 @@
   <div>
     <div class="is-size-5">Tags</div>
 
-    <div v-if="tags">
-      <router-link
-        v-for="tag in tags"
-        :key="tag.slug"
-        :to="{ path: '/tag/' + tag.slug }"
-        ><span class="tag is-info is-medium is-rounded m-1"
-          >#{{ tag.name }}</span
-        ></router-link
-      >
-    </div>
+    <ul v-if="tags">
+      <li v-for="tag in tags" :key="tag.slug">
+        <router-link :to="{ path: '/tag/' + tag.slug }" class="tag is-info mb-1"
+          >#{{ tag.name }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
