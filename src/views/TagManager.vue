@@ -1,6 +1,11 @@
 <template>
   <div>
-    <table class="table">
+    <div class="field is-horizontal">
+      <input type="text" class="input" v-model="tagName" />
+      <button class="button" v-on:click="addTag">New Tag</button>
+    </div>
+
+    <table class="table is-fullwidth">
       <thead>
         <tr>
           <th>Name</th>
@@ -99,7 +104,7 @@ export default defineComponent({
     const deleteTag = (tagSLug: string) => {
       axios
         .delete(process.env.VUE_APP_API_ROOT + "/tags/" + tagSLug)
-        .then((_) => fetchTags())
+        .then(() => fetchTags())
         .catch((e) => console.log(e));
     };
 
@@ -117,6 +122,17 @@ export default defineComponent({
         .catch((e) => console.log(e));
     };
 
+    const addTag = ()=>{
+      const tag = {
+        name: tagName.value,
+      }
+
+      axios.post(process.env.VUE_APP_API_ROOT + "/tags/", tag).then(()=>{
+        fetchTags();
+          closeModal();
+      }).catch(e=>console.log(e))
+    }
+
     return {
       tags,
       modalActive,
@@ -127,6 +143,7 @@ export default defineComponent({
       closeModal,
       deleteTag,
       updateTag,
+      addTag
     };
   },
 });
