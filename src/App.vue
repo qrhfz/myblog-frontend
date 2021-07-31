@@ -15,7 +15,7 @@
 
     <router-view :key="$route.fullPath" />
   </div>
-  <footer class="has-text-centered has-background-grey-lighter">
+  <footer class="has-text-centered has-background-white-ter">
     <div class="is-v-centered">
       made by <b>Qori El-Hafizh</b> with VueJS and Bulma
     </div>
